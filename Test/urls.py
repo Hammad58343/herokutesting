@@ -30,10 +30,10 @@ def view(request):
     if r.status_code == 200: 
         data = r.json()
 
-    else:
-        data = {"success": "false"}
+    # else:
+    #     data = {"success": "false"}
        
-    return JsonResponse(data = data,status=200,safe=False)
+    # return JsonResponse(data = data,status=200,safe=False)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
