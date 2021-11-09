@@ -19,9 +19,7 @@ from django.urls import path
 import requests
 
 def view(request):
-    return JsonResponse(data=requests.get("https://www.uuidtools.com/api/generate/v1/count/10").json(),status=200,safe=False)
-
-
+    return JsonResponse(data=requests.get("https://www.uuidtools.com/api/generate/v1/count/100").json(),status=200,safe=False)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
