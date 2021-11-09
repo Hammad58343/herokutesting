@@ -17,9 +17,7 @@ import json
 from django.contrib import admin
 from django.http.response import HttpResponse, JsonResponse
 from django.urls import path
-from django import requests
-
-
+import requests
 
 def view(request):
     headers = {
