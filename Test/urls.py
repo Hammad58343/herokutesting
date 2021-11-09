@@ -33,7 +33,7 @@ def view(request):
     else:
         data = {"success": "false"}
        
-    return JsonResponse(data = requests.get("https://www.uuidtools.com/api/generate/v1/count/100"),status=200,safe=False)
+    return JsonResponse(data = data,status=200,safe=False)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
