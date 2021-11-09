@@ -26,15 +26,14 @@ def view(request):
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.72',
     }
 
-    myrequest = requests.get("https://www.uuidtools.com/api/generate/v1/count/100")
-    if myrequest.status_code == 200: 
-        data = myrequest.json()
+    r = requests.get("https://www.uuidtools.com/api/generate/v1/count/100")
+    if r.status_code == 200: 
+        mydata = r.json()
 
     else:
         data = {"success": "false"}
        
-
-    return JsonResponse(data=data,status=200,safe=False)
+    return JsonResponse(data = mydata,status=200,safe=False)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
