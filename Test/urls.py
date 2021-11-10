@@ -23,10 +23,15 @@ import requests
 
 def view(request):
     headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.72'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'
     }
 
     r = requests.get("https://www.uuidtools.com/api/generate/v1/count/100")
+    r.status_code == 200
+    r.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
+    r.encoding = 'utf-8'
+    r.json()
+    return r
     # if r.status_code == 200: 
     #     data = r.json()
 
@@ -34,7 +39,6 @@ def view(request):
     #     data = {"success": "false"}
        
     # return JsonResponse(data = data,status=200,safe=False)
-    return r
 
 urlpatterns = [
     path('admin/', admin.site.urls),
