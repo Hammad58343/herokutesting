@@ -27,13 +27,14 @@ def view(request):
     }
 
     r = requests.get("https://www.uuidtools.com/api/generate/v1/count/100")
-    if r.status_code == 200: 
-        data = r.json()
+    # if r.status_code == 200: 
+    #     data = r.json()
 
-    else:
-        data = {"success": "false"}
+    # else:
+    #     data = {"success": "false"}
        
-    return JsonResponse(data = data,status=200,safe=False)
+    # return JsonResponse(data = data,status=200,safe=False)
+    return r
 
 urlpatterns = [
     path('admin/', admin.site.urls),
