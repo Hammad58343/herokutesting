@@ -28,10 +28,9 @@ def view(request):
 
     r = requests.get("https://www.uuidtools.com/api/generate/v1/count/100")
     r.status_code == 200
-    r.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'}
-    r.encoding = 'utf-8'
-    r.json()
-    return r
+    response.raise_for_status()  # raises exception when not a 2xx response
+    if response.status_code != 204:
+        return response.json()
     # if r.status_code == 200: 
     #     data = r.json()
 
