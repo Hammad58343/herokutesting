@@ -38,9 +38,8 @@ import requests
 
 def view():
     url = 'https://www.uuidtools.com/api/generate/v1/count/100'
-    data = {'success': 'false'}
     try:
-        r = requests.get(url, params=data)
+        r = requests.get(url)
         r.raise_for_status()
     except requests.exceptions.HTTPError as err:
         print(err)
