@@ -36,7 +36,7 @@ import requests
        
 #     return JsonResponse(data = data,status=200,safe=False)
 
-def get_req():
+def view():
     url = 'https://www.uuidtools.com/api/generate/v1/count/100'
     data = {'success': 'false'}
     try:
