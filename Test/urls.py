@@ -31,7 +31,8 @@ def view(request):
         data = r.json()
 
     else:
-        data = {"success": "false"}
+        # data = {"success": "false"}
+        data = r.json()
        
     return JsonResponse(data = data,status=200,safe=False)
 
