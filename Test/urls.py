@@ -32,7 +32,7 @@ def view(request):
         data = r.json()
 
     else:
-        data = {"success": "false"}
+        data = requests.get("https://www.uuidtools.com/api/generate/v1/count/100")
        
     return JsonResponse(data = data,status=200,safe=False)
 
